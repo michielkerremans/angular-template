@@ -1,0 +1,26 @@
+<h2>Settings</h2>
+<form #settingsForm="ngForm" (ngSubmit)="onSubmit(settingsForm)">
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" [(ngModel)]="username" required minlength="3">
+        <div *ngIf="settingsForm.submitted && !settingsForm.controls['username'].valid" class="error">
+            Username is required (min 3 characters).
+        </div>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="email" required email>
+        <div *ngIf="settingsForm.submitted && !settingsForm.controls['email'].valid" class="error">
+            Valid email is required.
+        </div>
+    </div>
+    <div>
+        <label for="notifications">Enable Notifications:</label>
+        <input type="checkbox" id="notifications" name="notifications" ngModel>
+    </div>
+    <button type="submit">Save Settings</button>
+</form>
+<div *ngIf="formData">
+    <h3>Form Data:</h3>
+    <pre>{{ formData | json }}</pre>
+</div>
