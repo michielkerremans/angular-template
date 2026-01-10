@@ -10,11 +10,11 @@ export class HttpService {
 
   getData(): Observable<any> {
     // Example public API
-    return this.http.get('https://jsonplaceholder.typicode.com/posts/1');
+    return this.http.get<any>('https://jsonplaceholder.typicode.com/posts/1');
   }
 
-  postData(data: any): Observable<any> {
+  postData(data: Record<string, unknown>): Observable<any> {
     // Example public API
-    return this.http.post('https://jsonplaceholder.typicode.com/posts', data);
+    return this.http.post<any>('https://jsonplaceholder.typicode.com/posts', data);
   }
 }
