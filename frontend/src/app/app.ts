@@ -7,5 +7,5 @@ import { Component, signal } from '@angular/core';
   styleUrls: ['./app.scss']
 })
 export class App {
-  protected readonly title = 'frontend';
+  protected readonly title = 'Angular App Template';
 }

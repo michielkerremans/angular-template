@@ -1,13 +1,15 @@
 import { Component, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BehaviorSubject, Subject, Subscription } from 'rxjs';
+import { ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-angular-demo',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './angular-demo.component.html',
-  styleUrls: ['./angular-demo.component.scss']
+  styleUrls: ['./angular-demo.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AngularDemoComponent implements OnDestroy {
   // Shared counter

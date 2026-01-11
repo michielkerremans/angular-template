@@ -2,6 +2,7 @@ import { Component, signal, WritableSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from '../services/http.service';
+import { ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-http',
@@ -9,6 +10,7 @@ import { HttpService } from '../services/http.service';
   imports: [CommonModule, HttpClientModule],
   templateUrl: './http.component.html',
   styleUrls: ['./http.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HttpComponent {
   response: WritableSignal<any> = signal<any>(null);
